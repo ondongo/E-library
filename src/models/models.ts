@@ -1,11 +1,47 @@
 import { Timestamp } from "firebase/firestore";
 
-export type book = {
+export enum TypeBook {
+  AUDIO = "AUDIO",
+  PDF = "PDF",
+}
+
+export const categorieList = [
+  "POUR LES NULS",
+  "ÉCOLOGIE",
+  "NATURE ET ANIMAUX",
+  "POLITIQUE",
+  "SANTÉ",
+  "SCIENCE",
+  "SOCIETE",
+  "SPIRITUALITÉ",
+  "ÉSOTÉRISME",
+  "ESSAI",
+  "HISTOIRE",
+  "HUMOUR",
+  "JOURNALISME",
+  "PHILOSOPHIE",
+  "POÉSIE",
+  "ACTUALITÉ",
+  "BIEN-ÊTRE",
+  "BIOGRAPHIE",
+  "CUISINE ET VIN",
+  "DICTIONNAIRES",
+  "ÉCONOMIE",
+] as const;
+
+export type Category = (typeof categorieList)[number];
+
+export type Book = {
   id: string;
   name: string;
-  status: string;
+  status: "AVAILABLE" | "BORROWED" | "UNAVAILABLE";
   description: string;
   author: string;
+  typeBook: TypeBook;
+  ratings: number[];
+  totalRatings: number;
+  reviewers: string[];
+  categorie: Category;
 };
 
 export type UserDetails = {
@@ -16,15 +52,33 @@ export type UserDetails = {
   isPremium?: boolean;
 };
 
-export type history = {
+
+export type UserPdfProgress = {
+  userId: string;
+  bookId: string;
+  currentPage: number;
+};
+
+
+export type UserAudioProgress = {
+  userId: string;
+  bookId: string;
+  currentTime: number;
+};
+
+
+export type History = {
   id: string;
   userId: string;
   timestamp: Timestamp;
   searchQuery: string;
-  results: book[];
+  results: Book[];
 };
 
-export type favorite = {
+
+
+
+export type Favorite = {
   id: string;
   userId: string;
   bookId: string;
@@ -35,31 +89,26 @@ export type chat = {
   id: string;
 };
 
-export type activity = {
+export type Activity = {
   id: string;
   userId: string;
   favoriteNumber: number;
   historyNumber: number;
-  downloadNumber: number;
+  readBookNumber: number;
   searchNumber: number;
 };
 
 export type SearchState = {
   bookName: string;
-  city: string;
-  sector: string;
-  postalCode: string;
-  horaire: string;
+  categorie: string;
 };
-
-export type bookType = book;
 
 export type SearchHistory = {
   docId?: string;
   userId: string;
   searchState: SearchState;
   pageNumber: number;
-  results: bookType[];
+  results: Book[];
   link: string;
   date?: Timestamp;
 };

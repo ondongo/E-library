@@ -15,7 +15,7 @@ import {
 import React from "react";
 import { RiSearch2Fill } from "react-icons/ri";
 import SidebarLeft from "./SideBarLeft";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaSearch, FaSearchPlus } from "react-icons/fa";
 
 function PrincipalView() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -51,7 +51,7 @@ function PrincipalView() {
             justifyContent={"center"}
             height={"100%"}
           >
-            <Image src="Biblio/search.svg" alt="" />
+            <FaSearch color="gray"/>
           </InputLeftElement>
           <Input
             placeholder="Rechercher un livre"
@@ -59,7 +59,7 @@ function PrincipalView() {
             width="447px"
             height="56px"
             focusBorderColor="#3CCB25"
-            _placeholder={{ color: "#3CCB25" }}
+            _placeholder={{ color: "gray" }}
           />
         </InputGroup>
 

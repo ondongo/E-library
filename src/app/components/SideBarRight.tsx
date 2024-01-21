@@ -76,7 +76,7 @@ function SideBarRight() {
           fontWeight="500"
           lineHeight="normal"
         >
-          Lecture journalère
+          Rythme de lecture 
         </Text>
 
         <Flex

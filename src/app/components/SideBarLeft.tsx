@@ -1,4 +1,5 @@
 import { Flex, Box, Image, Text, Center, Icon, Link } from "@chakra-ui/react";
+import { usePathname, useRouter } from "next/navigation";
 import {
   RiDashboardLine,
   RiSettings2Line,
@@ -6,6 +7,8 @@ import {
 } from "react-icons/ri";
 
 const SidebarLeft = () => {
+  const pathname = usePathname();
+  const router = useRouter();
   return (
     <Flex
       width="238px"
@@ -51,13 +54,14 @@ const SidebarLeft = () => {
           justifyContent={"space-between"}
         >
           <Flex ml="10">Congo Library</Flex>
-          <Image src="Biblio/red.svg" alt="" />
         </Flex>
       </Flex>
 
-      <Flex justifyContent={"space-between"} flexDirection={"column"} height={"100%"}>
-
-        
+      <Flex
+        justifyContent={"space-between"}
+        flexDirection={"column"}
+        height={"100%"}
+      >
         <Flex
           gap="6"
           align="start"
@@ -96,7 +100,7 @@ const SidebarLeft = () => {
             <Image src="/Biblio/Icone6.svg" alt="" ml={4} />
 
             <Link href="">
-              <Text ml={4}>Categories</Text>
+              <Text ml={4}>Recherche</Text>
             </Link>
           </Flex>
           <Flex
@@ -139,22 +143,6 @@ const SidebarLeft = () => {
             alignItems="center"
           >
             <Image src="/Biblio/Icone4.svg" alt="" ml={4} />
-
-            <Link display="flex" alignItems="center" href="">
-              <Text ml={4}>Mes lectures</Text>
-            </Link>
-          </Flex>
-
-          <Flex
-            color="#F5FBF2"
-            fontFamily="Rubik"
-            fontSize="16px"
-            fontStyle="normal"
-            fontWeight="400"
-            lineHeight="130%"
-            alignItems="center"
-          >
-            <Image src="/Biblio/download.svg" alt="" ml={4} />
 
             <Link display="flex" alignItems="center" href="">
               <Text ml={4}>Mes lectures</Text>
