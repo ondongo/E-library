@@ -1,7 +1,7 @@
 // Chakra imports
 import { Flex, Box, Icon, Text, Spacer } from '@chakra-ui/react'
 // Custom components
-import Card from 'components/card/Card'
+import Card from '@/components/card/Card'
 
 // Assets
 import bgMastercard from 'img/dashboards/Debit.png'
@@ -17,7 +17,7 @@ export default function Banner (props: {
   // Chakra Color Mode
   return (
     <Card
-      backgroundImage={bgMastercard}
+      //background={bgMastercard!}
       backgroundRepeat='no-repeat'
       bgSize='cover'
       alignSelf='center'

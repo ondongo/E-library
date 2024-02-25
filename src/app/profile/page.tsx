@@ -7,8 +7,8 @@ import Storage from '@/components/profileComponents/Storage';
 import { Box, Grid } from '@chakra-ui/react';
 
 // Assets
-import banner from 'img/auth/banner.png';
-import avatar from 'img/avatars/avatar4.png';
+import banner from '@/img/auth/banner.png';
+import avatar from '@/img/avatars/avatar4.png';
 
 export default function ProfileOverview() {
   return (

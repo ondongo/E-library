@@ -53,7 +53,7 @@ function SearchProvider({ children }: { children: React.ReactNode }) {
 
   const { user } = useAuthContext();
 
-  const isEqualToCurrentSearch = useCallback(() => {
+ /*  const isEqualToCurrentSearch = useCallback(() => {
     return (
       currentSearchHistory?.searchState.city === searchState?.city &&
       currentSearchHistory?.searchState.companyName ===
@@ -63,19 +63,20 @@ function SearchProvider({ children }: { children: React.ReactNode }) {
         searchState?.postalCode &&
       currentSearchHistory?.searchState.sector === searchState?.sector
     );
-  }, [currentSearchHistory, searchState]);
+  }, [currentSearchHistory, searchState]); */
 
   const router = useRouter();
 
-  const updateSearchHistory = useCallback(
+ /*  const updateSearchHistory = useCallback(
     async (results: any) => {
       if (results?.hits.length === 0) return;
       console.log("Running search update");
       if (
         results &&
         currentSearchHistory &&
-        currentSearchHistory.searchState &&
-        isEqualToCurrentSearch()
+        currentSearchHistory.searchState 
+        //&&
+        //isEqualToCurrentSearch()
       ) {
         if (results.page !== currentSearchHistory.pageNumber) {
           //@ts-ignore
@@ -116,9 +117,9 @@ function SearchProvider({ children }: { children: React.ReactNode }) {
     },
     [currentSearchHistory, isEqualToCurrentSearch, searchState, user.uid]
   );
-
+ */
   useEffect(() => {
-    updateSearchHistory(searchResult);
+    //updateSearchHistory(searchResult);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchResult]);
@@ -198,13 +199,13 @@ function SearchProvider({ children }: { children: React.ReactNode }) {
         };
       });
 
-      setSearchState({
+      /* setSearchState({
         city: companyCity ?? "",
         companyName: companyName ?? "",
         horaire: companyHoraire ?? "",
         postalCode: companyPostalCode ?? "",
         sector: companySector ?? "",
-      });
+      }); */
     }
 
     return null;

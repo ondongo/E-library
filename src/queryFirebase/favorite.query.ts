@@ -1,18 +1,18 @@
 import { getTotalPages } from "@/utils/utils";
-import { company } from "../models/models";
-import { findCompanyById } from "./book.query";
+import { Book } from "../models/models";
+import { findBookById } from "./book.query";
 import { updateActivity } from "./activity.query";
 
 const getFirestore = () => import("../firebase/firestore");
 
-export async function addToFavorites(userId: string, companyId: string) {
+export async function addToFavorites(userId: string, BookId: string) {
   const { db, collection, addDoc, updateDoc, doc, increment } =
     await getFirestore();
   try {
     const favoritesRef = collection(db, "favorites");
     const favoriteDocRef = await addDoc(favoritesRef, {
       userId: userId,
-      companyId: companyId,
+      BookId: BookId,
     });
     await updateActivity(userId, "favorite");
     return true;
@@ -22,7 +22,7 @@ export async function addToFavorites(userId: string, companyId: string) {
   }
 }
 
-export async function removeFromFavorites(userId: string, companyId: string) {
+export async function removeFromFavorites(userId: string, BookId: string) {
   const {
     doc,
     db,
@@ -40,7 +40,7 @@ export async function removeFromFavorites(userId: string, companyId: string) {
       query(
         favoritesRef,
         where("userId", "==", userId),
-        where("companyId", "==", companyId)
+        where("BookId", "==", BookId)
       )
     );
 
@@ -56,7 +56,7 @@ export async function removeFromFavorites(userId: string, companyId: string) {
   }
 }
 
-export async function getIdFavorites(userId: string, companyId: string) {
+export async function getIdFavorites(userId: string, BookId: string) {
   const { db, collection, getDocs, query, where } = await getFirestore();
   try {
     const favoritesRef = collection(db, "favorites");
@@ -64,7 +64,7 @@ export async function getIdFavorites(userId: string, companyId: string) {
       query(
         favoritesRef,
         where("userId", "==", userId),
-        where("companyId", "==", companyId)
+        where("BookId", "==", BookId)
       )
     );
 
@@ -96,12 +96,12 @@ export async function checkFavorites(userId: string, itemId: string) {
   }
 }
 
-export const getPaginateFavoriteCompanyForUser = async (
+export const getPaginateFavoriteBookForUser = async (
   userId: string,
   _limit?: number,
   _startAfter?: any
 ): Promise<{
-  company: company[];
+  Book: Book[];
   pageCount: number;
   lastDocId: any;
   FavCount: number;
@@ -134,29 +134,29 @@ export const getPaginateFavoriteCompanyForUser = async (
     }
 
     const querySnapshot = await getDocs(queryRef);
-    const favoriteCompanyIds: string[] = [];
+    const favoriteBookIds: string[] = [];
 
     querySnapshot.forEach((doc) => {
       const favoriteData = doc.data();
-      favoriteCompanyIds.push(favoriteData.companyId);
+      favoriteBookIds.push(favoriteData.BookId);
     });
 
-    const favoriteItems: (company | null)[] = await Promise.all(
-      favoriteCompanyIds.map(async (companyId) => {
-        const favoriteItem = await findCompanyById(companyId);
+    const favoriteItems: (Book | null)[] = await Promise.all(
+      favoriteBookIds.map(async (BookId) => {
+        const favoriteItem = await findBookById(BookId);
         return favoriteItem;
       })
     );
 
-    const filteredFavoriteCompany: company[] = favoriteItems.filter(
-      (item): item is company => item !== null
+    const filteredFavoriteBook: Book[] = favoriteItems.filter(
+      (item): item is Book => item !== null
     );
 
     if (querySnapshot.size > 0) {
       lastDocId = querySnapshot.docs[querySnapshot.docs.length - 1];
     }
     return {
-      company: filteredFavoriteCompany,
+      Book: filteredFavoriteBook,
       pageCount: getTotalPages(3, count.data().count),
       lastDocId: lastDocId,
       FavCount: count.data().count,
