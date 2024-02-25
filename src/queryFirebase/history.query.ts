@@ -1,6 +1,6 @@
 import {
   SearchHistory,
-  type CompanyType,
+  type Book,
   type SearchState,
 } from "../models/models";
 import { updateActivity } from "./activity.query";
