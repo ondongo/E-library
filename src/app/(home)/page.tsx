@@ -1,11 +1,13 @@
 "use client";
 import React, { useCallback, useRef } from "react";
-import SidebarLeft from "../components/SideBarLeft";
+
 import { Button, Flex } from "@chakra-ui/react";
-import PrincipalView from "../components/PrincipalView";
+
 import "./style.css";
 import ReactCanvasConfetti from "react-canvas-confetti";
-import SideBarRight from "../components/SideBarRight";
+import PrincipalView from "@/components/PrincipalView";
+import SidebarLeft from "@/components/SideBarLeft";
+import SideBarRight from "@/components/SideBarRight";
 
 function Home() {
   const refAnimationInstance = useRef<((opts: any) => void) | null>(null);

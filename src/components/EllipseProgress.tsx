@@ -12,7 +12,7 @@ function EllipseProgress({ value, max }: any) {
       alignItems={"center"}
     >
       <CircularProgressLabel
-        color="RGB(43, 206, 137)"
+        color="#118A7E"
         fontSize="14.697px"
         font-style="normal"
         font-weight="500"

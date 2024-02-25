@@ -25,52 +25,19 @@ function SideBarRight() {
       height="100vh"
       flexShrink="0"
       color="white"
-      background="RGB(43, 206, 137)"
-      boxShadow="2px 0px 4px 0px rgba(0, 0, 0, 0.25)"
+      background="#118A7E"
+      boxShadow="4px 4px 0px 0px rgba(0, 0, 0, 0.25)"
       position={"fixed"}
       right={"0"}
       gap={"20px"}
+      top={'120px'}
+      borderRadius="25px 25px 0px 0px"
     >
-      <Flex
-        justifyContent={"center"}
-        width={"100%"}
-        align={"center"}
-        direction={"column"}
-        p={4}
-      >
-        <Flex>
-          <Image src="Biblio/Congo.png" alt="" />
-        </Flex>
-
-        <Flex
-          display="flex"
-          width="149px"
-          height="31px"
-          padding="9.185px 9.185px 9.185px 18.371px"
-          alignItems="center"
-          gap="18.371px"
-          //flexShrink="0"
-          borderRadius="27.556px"
-          background="#FFF"
-        >
-          <Text
-            color="#000"
-            textAlign="center"
-            fontFamily="Rubik"
-            fontSize="14.697px"
-            fontStyle="normal"
-            fontWeight="500"
-            lineHeight="normal"
-          >
-            Gloire ONDONGO
-          </Text>
-        </Flex>
-      </Flex>
-
+     
       <Flex direction={"column"} gap={4} p={4}>
         <Text
           color="rgba(0, 0, 0, 0.63)"
-          fontFamily="Rubik"
+          fontFamily="Inter"
           fontSize="22.045px"
           fontStyle="normal"
           fontWeight="500"
@@ -92,7 +59,7 @@ function SideBarRight() {
           <Flex direction={"column"} alignItems={"center"}>
             <Text
               color="#2BCE89"
-              fontFamily="Rubik"
+              fontFamily="Inter"
               fontSize="18.371px"
               fontStyle="normal"
               fontWeight="500"
@@ -140,7 +107,7 @@ function SideBarRight() {
             height="187.539px"
             flexShrink="0"
             borderRadius="6.346px"
-            background="RGB(43, 206, 137)"
+            background="#118A7E"
             p={"10px"}
             justifyContent={"center"}
           >
@@ -155,7 +122,7 @@ function SideBarRight() {
 
           <Text
             color="#000"
-            fontFamily="Rubik"
+            fontFamily="Inter"
             fontSize="13.071px"
             fontStyle="normal"
             fontWeight="500"
@@ -166,7 +133,7 @@ function SideBarRight() {
 
           <Text
             color="rgba(0, 0, 0, 0.50)"
-            fontFamily="Rubik"
+            fontFamily="Inter"
             fontSize="13.071px"
             fontStyle="normal"
             fontWeight="500"
