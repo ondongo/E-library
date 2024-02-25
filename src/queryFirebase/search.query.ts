@@ -4,7 +4,7 @@ const getFirestore = () => import("../firebase/firestore");
 export const getFirstTenCompanies = async () => {
   try {
     const { db, collection, query, getDocs, limit } = await getFirestore();
-    const companiesCollection = collection(db, "company");
+    const companiesCollection = collection(db, "books");
     const companiesQuery = query(companiesCollection, limit(10));
 
     const querySnapshot = await getDocs(companiesQuery);
@@ -34,7 +34,7 @@ export const filterCompanies = async (
     const { db, collection, query, getDocs, where, limit } =
       await getFirestore();
 
-    let companiesQuery = query(collection(db, "company"));
+    let companiesQuery = query(collection(db, "books"));
 
     if (name) {
       companiesQuery = query(
@@ -42,36 +42,6 @@ export const filterCompanies = async (
         where("name", ">=", name),
         where("name", "<=", name + "\uf8ff")
       );
-    }
-
-    if (city) {
-      companiesQuery = query(companiesQuery, where("city", "==", city));
-    }
-
-    if (sector) {
-      companiesQuery = query(
-        companiesQuery,
-        where("sector", ">=", sector),
-        where("sector", "<=", sector + "\uf8ff")
-      );
-    }
-
-    if (postalCode) {
-      companiesQuery = query(
-        companiesQuery,
-        where("postalCode", "==", postalCode)
-      );
-    }
-
-    if (plageHoraire) {
-      companiesQuery = query(
-        companiesQuery,
-        where("horaire", "==", plageHoraire)
-      );
-    }
-
-    if (adresse) {
-      companiesQuery = query(companiesQuery, where("address", "==", adresse));
     }
 
     companiesQuery = query(companiesQuery, limit(10));

@@ -1,6 +1,6 @@
 import { getTotalPages } from "@/utils/utils";
 import { company } from "../models/models";
-import { findCompanyById } from "./company.query";
+import { findCompanyById } from "./book.query";
 import { updateActivity } from "./activity.query";
 
 const getFirestore = () => import("../firebase/firestore");

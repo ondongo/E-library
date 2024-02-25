@@ -1,4 +1,4 @@
-import { company } from "../models/models";
+import { Book } from "../models/models";
 
 const getFirestore = () => import("../firebase/firestore");
 

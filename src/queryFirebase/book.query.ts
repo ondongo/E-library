@@ -1,8 +1,8 @@
-import { company } from "../models/models";
+import {  Book } from "../models/models";
 
 const getFirestore = () => import("../firebase/firestore");
 
-export const findCompanyById = async (id: string) => {
+export const findBookById = async (id: string) => {
     try {
       const { doc, getDoc, db } = await getFirestore();
       const companyDocRef = doc(db, "company", id);
@@ -12,7 +12,7 @@ export const findCompanyById = async (id: string) => {
         const cp = {
           id: companyDocSnapshot.id,
           ...companyData,
-        } as company;
+        } as  Book;
         return cp;
       } else {
         return null;

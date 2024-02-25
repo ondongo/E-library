@@ -1,6 +1,6 @@
 import algoliasearch from 'algoliasearch/lite';
 
-export const indexName = 'company_index';
+export const indexName = 'books_index';
 const ALGOLIA_CLIENT = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_APPID!,
   process.env.NEXT_PUBLIC_ALGOLIA_SEARCHKEY!
