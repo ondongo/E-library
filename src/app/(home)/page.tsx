@@ -5,9 +5,9 @@ import { Button, Flex } from "@chakra-ui/react";
 
 import "./style.css";
 import ReactCanvasConfetti from "react-canvas-confetti";
-import PrincipalView from "@/components/PrincipalView";
-import SidebarLeft from "@/components/SideBarLeft";
-import SideBarRight from "@/components/SideBarRight";
+import PrincipalView from "@/components/container/ContainerHome";
+import SidebarLeft from "@/components/sidebars/SideBarLeft";
+import SideBarRight from "@/components/sidebars/SideBarRight";
 
 function Home() {
   const refAnimationInstance = useRef<((opts: any) => void) | null>(null);

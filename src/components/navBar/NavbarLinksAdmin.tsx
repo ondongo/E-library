@@ -139,9 +139,9 @@ export default function HeaderLinks(props: {
               Mark all read
             </Text>
           </Flex>
-          <Flex direction="column" >
+          <Flex direction="column">
             <MenuItem
-              _hover={{ bg: "none" }} 
+              _hover={{ bg: "none" }}
               _focus={{ bg: "none" }}
               px="0"
               borderRadius="8px"
@@ -158,68 +158,6 @@ export default function HeaderLinks(props: {
             >
               <ItemContent info="Horizon Design System Free" />
             </MenuItem>
-          </Flex>
-        </MenuList>
-      </Menu>
-
-      <Menu>
-        <MenuButton p="0px">
-          <Icon
-            mt="6px"
-            as={MdInfoOutline}
-            color={navbarIcon}
-            w="18px"
-            h="18px"
-            me="10px"
-          />
-        </MenuButton>
-        <MenuList
-          boxShadow={shadow}
-          p="20px"
-          me={{ base: "30px", md: "unset" }}
-          borderRadius="20px"
-          bg={menuBg}
-          border="none"
-          mt="22px"
-          minW={{ base: "unset" }}
-          maxW={{ base: "360px", md: "unset" }}
-        >
-          {/* <Image src={navImage.src} borderRadius="16px" mb="28px" alt="" /> */}
-          <Flex flexDirection="column">
-            <Link w="100%" href="https://horizon-ui.com/pro">
-              <Button w="100%" h="44px" mb="10px" variant="brand">
-                Buy Horizon UI PRO
-              </Button>
-            </Link>
-            <Link
-              w="100%"
-              href="https://horizon-ui.com/documentation/docs/introduction"
-            >
-              <Button
-                w="100%"
-                h="44px"
-                mb="10px"
-                border="1px solid"
-                bg="transparent"
-                borderColor={borderButton}
-              >
-                See Documentation
-              </Button>
-            </Link>
-            <Link
-              w="100%"
-              href="https://github.com/horizon-ui/horizon-ui-chakra-nextjs"
-            >
-              <Button
-                w="100%"
-                h="44px"
-                variant="no-hover"
-                color={textColor}
-                bg="transparent"
-              >
-                Try Horizon Free
-              </Button>
-            </Link>
           </Flex>
         </MenuList>
       </Menu>

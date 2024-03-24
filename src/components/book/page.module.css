@@ -1,0 +1,29 @@
+.main{
+    width:95%;
+    margin:auto;
+  }
+  
+  .containerStyle{
+    display:flex;
+  }
+  .content{
+    width:30%;
+  }
+  
+  .ulGroupStyle{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    
+  }
+  
+  .grouper{
+    
+    padding:10px 1px;
+    border-radius:20px;
+  
+  }
+  
+  .title{
+    padding-left:40px;
+  }

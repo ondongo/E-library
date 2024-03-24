@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/three/components/SceneVanilla.tsx", "src/app/components/ScrollSmooth.tsx", "src/app/glassMorphism/components/ImagesThree.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/three/components/SceneVanilla.tsx", "src/app/components/ScrollSmooth.tsx", "src/app/glassMorphism/components/ImagesThree.tsx", "src/utils/calculate.js", "src/components/book/TurnBook.jsx"],
   "exclude": ["node_modules"]
 }

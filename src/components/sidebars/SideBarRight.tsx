@@ -14,8 +14,8 @@ import {
   RiSettings2Line,
   RiLogoutBoxLine,
 } from "react-icons/ri";
-import EllipseProgress from "./EllipseProgress";
-import { DrawerDetails } from "./DrawerDetails";
+import EllipseProgress from "../EllipseProgress";
+import { DrawerDetails } from "../DrawerDetails";
 
 function SideBarRight() {
   return (

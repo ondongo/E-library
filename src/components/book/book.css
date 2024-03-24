@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap");
+*, html {
+  box-sizing: border-box;
+}
+
+
+
+#book-container {
+  margin: 50px auto;
+  position: relative;
+  display: flex;
+}
+
+img {
+  pointer-events: none;
+}
+
+.page {
+  cursor: pointer;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  box-shadow: inset -2px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 0px 30px;
+  font-size: 12px;
+  transform-origin: 0% 0%;
+}
+.page .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.page .number {
+  font-size: 11px;
+}
+.page h1 {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 60px auto 0 auto;
+  line-height: 2.5;
+  text-align: center;
+  text-transform: uppercase;
+}
+.page .right {
+  text-align: right;
+}
+.page h3, .page h4 {
+  margin: 0;
+  padding: 0;
+}
+.page:first-child {
+  left: 0;
+}
+.page .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page .img img {
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+.shadow {
+  position: absolute;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(184, 184, 184, 0) 100%);
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+  transform-origin: 0 0;
+}
+
+.copy {
+  width: 600px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=book.css.map */
